@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  h1 Welcome to #{title}
+  - postUrl
+  a(id="login", style="display: block;", href="#{postUrl}") Click to log in
+
