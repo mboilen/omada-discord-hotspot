@@ -4,6 +4,8 @@ var path = require('path');
 //var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var session = require('express-session');
+
 var config = require('./config.json');
 
 //set up some helpful urls
@@ -20,6 +22,15 @@ var discordLoginRouter = require('./routes/discordLogin')(config);
 var omadaLoginRouter = require('./routes/omadaLogin')(config);
 
 var app = express();
+
+//set up sessions
+app.set('trust-proxy', 1);
+app.use(session({
+  secret: 'random string',
+  resave: false,
+  saveUninitialized: false,
+  cookie: { secure: false }
+}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

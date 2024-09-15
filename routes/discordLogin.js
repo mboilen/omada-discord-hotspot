@@ -34,9 +34,9 @@ module.exports = function(config) {
 			const guildList = await guildsResult.body.json();
 
 			if (guildList.find((elt) => {
-				console.log(elt.id);
 				return config.discord.allowedGuilds.includes(elt.id)
 			})) {
+				req.session.authenticated = true
 				res.render( 'loggingin', { target: config.urls.login} );
 			} else {
 				res.render( 'denied', { title: config.title } );
