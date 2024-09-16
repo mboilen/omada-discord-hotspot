@@ -13,9 +13,10 @@ config.urls = {
   "discordLogin": new URL("discordLogin", config.service.url).href,
   "login": new URL("login", config.service.url).href,
   "success": new URL("success", config.service.url).href,
-  "unauthorized": new URL("unauthorized", config.service.url).href
+  "unauthorized": new URL("unauthorized", config.service.url).href,
+  'omadaApiLoginUrl': new URL("/" + config.omada.site_id + "/api/v2/hotspot/login", config.omada.url),
+  'omadaClientAuthUrl': new URL("/" + config.omada.site_id + "/api/v2/hotspot/extPortal/auth", config.omada.url)
 }
-
 
 var indexRouter = require('./routes/index')(config);
 var discordLoginRouter = require('./routes/discordLogin')(config);
