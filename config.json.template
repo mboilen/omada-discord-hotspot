@@ -1,0 +1,19 @@
+{
+    "title": "Portal Title Here",
+    "service": {
+        "url": "https://UrlToYourService",
+        "port": 53134
+    },
+    "discord": {
+        "clientId": "_your_discord_client_id",
+        "clientSecret": "_your_discord_client_secret",
+        "allowedGuilds": ["list", "of", "allowed", "guild", "snowflakes"]
+    },
+    "omada": {
+        "url": "https://url.to.omada/",
+        "site_id": "guid-for-portal-site",
+        "username": "omada-service-username",
+        "password": "omada-service-password"
+    }
+
+}
